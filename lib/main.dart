@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tweet_dock/screens/landing_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tweet_dock/screens/signUp_screen.dart';
 
 
 void main() {
@@ -14,9 +15,9 @@ class TweetDock extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        textTheme: GoogleFonts.ralewayTextTheme(textTheme)
+        textTheme: GoogleFonts.latoTextTheme(textTheme)
       ),
-      home: LandingScreen() ,
+      home: SignUp() ,
     );
   }
 }
