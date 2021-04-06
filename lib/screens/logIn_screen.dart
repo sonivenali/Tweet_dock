@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tweet_dock/screens/signup_screen.dart';
 
 class LogIn extends StatefulWidget {
   @override
@@ -22,12 +23,16 @@ class _LogInState extends State<LogIn> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(right: 8),
-              child: Text(
-                "SignUp",
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+              child: GestureDetector(onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
+              },
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
             ),
           ),

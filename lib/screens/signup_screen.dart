@@ -15,7 +15,7 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.white,
       key: _scaffoldKey,
       body: Padding(
         padding: const EdgeInsets.only(top: 80, right: 20, left: 30),

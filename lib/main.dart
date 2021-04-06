@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tweet_dock/screens/landing_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tweet_dock/screens/logIn_screen.dart';
-import 'package:tweet_dock/screens/signUp_screen.dart';
+import 'package:tweet_dock/screens/signup_screen.dart';
 
 
 void main() {
@@ -18,7 +18,7 @@ class TweetDock extends StatelessWidget {
       theme: ThemeData(
         textTheme: GoogleFonts.latoTextTheme(textTheme)
       ),
-      home: LogIn() ,
+      home: LandingScreen() ,
     );
   }
 }

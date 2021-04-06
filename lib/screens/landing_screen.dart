@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tweet_dock/screens/logIn_screen.dart';
+import 'package:tweet_dock/screens/signup_screen.dart';
 
 class LandingScreen extends StatefulWidget {
   @override
@@ -31,7 +33,9 @@ class _LandingScreenState extends State<LandingScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(20)),
                       color: Colors.blue,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text("Create Account",
@@ -52,7 +56,9 @@ class _LandingScreenState extends State<LandingScreen> {
                       style: TextStyle(fontSize: 16),
                     ),
                     GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => LogIn()));
+                        },
                         child: Text("  Log in",
                             style: TextStyle(
                                 color: Colors.blueAccent, fontSize: 16)))
