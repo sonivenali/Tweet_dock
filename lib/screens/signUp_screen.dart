@@ -7,6 +7,10 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   final _formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final dobController = TextEditingController();
+
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
@@ -34,14 +38,15 @@ class _SignUpState extends State<SignUp> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: TextFormField(
+                        controller: nameController,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
                         decoration:
-                            InputDecoration(hintText: "Name", hintMaxLines: 20),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
+                        InputDecoration(hintText: "Name",),
                       ),
                     ),
                   ),
@@ -50,14 +55,18 @@ class _SignUpState extends State<SignUp> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: TextFormField(
+                        controller: emailController,
+                        validator: (String text) {
+                          if (text.isEmpty ||
+                              !text.contains("@") ||
+                              !text.contains(".com")) {
+                            return "Email is INVALID";
+                          } else {
+                            return null;
+                          }
+                        },
                         decoration: InputDecoration(
-                            hintText: "Phone number or email address"),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
-                          }
-                          return null;
-                        },
+                            hintText: "Email address"),
                       ),
                     ),
                   ),
@@ -66,13 +75,14 @@ class _SignUpState extends State<SignUp> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: TextFormField(
-                        decoration: InputDecoration(hintText: "Date of birth"),
+                       controller: dobController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter some text';
                           }
                           return null;
                         },
+                        decoration: InputDecoration(hintText: "Date of birth"),
                       ),
                     ),
                   ),
@@ -82,17 +92,20 @@ class _SignUpState extends State<SignUp> {
                   right: 1,
                   bottom: 20,
                   child: FlatButton(
-                      minWidth: 70,
+                      minWidth: 60,height: 35,
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(20)),
                       color: Colors.blue,
-                      onPressed: () {},
+                      onPressed: () {
+                        if(_formKey.currentState.validate()){
+                        }
+                      },
                       child: Text("Next",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
                             fontWeight: FontWeight.w700,
-                          ))))
+                          )))),
             ],
           ),
         ),
