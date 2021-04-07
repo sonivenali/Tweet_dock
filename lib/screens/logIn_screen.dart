@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tweet_dock/screens/home_screen.dart';
 import 'package:tweet_dock/screens/signup_screen.dart';
 
 class LogIn extends StatefulWidget {
@@ -111,7 +112,9 @@ class _LogInState extends State<LogIn> {
                           borderRadius: new BorderRadius.circular(20)),
                       color: Colors.blue,
                       onPressed: () {
-                        if (_formKey.currentState.validate()) {}
+                        if (_formKey.currentState.validate()) {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
+                        }
                       },
                       child: Text("Log in",
                           style: TextStyle(
