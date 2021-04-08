@@ -148,6 +148,34 @@ class _HomeScreenState extends State<HomeScreen> {
                 "@melissafumero . 10h",
                 "Ba ba ba back in the Nine Nine!!! Yesterday, I was so excited to be back at work I forgot to take a pic to commemorate the occasion, so here’s a day 2 pic! #Brooklyn99 #Season8",
                 "assets/images/tweet2.jpg"),
+            buildProfile(
+                context,
+                "assets/images/userImage3.jpg",
+                "Harshita Gupta",
+                "@guptaharshita . 13",
+                "Night curfew in Delhi Females:",
+                "assets/images/tweet3.jpg"),
+            buildProfile(
+                context,
+                "assets/images/userImage1.jpg",
+                "Kerry W. Lothrop",
+                "@kwlothrop . Mar 31",
+                "Close enough! It’s from the pre-Minifigure days. The technic figures (right) had hands closer to those of Minifigures. #legotrivia",
+                "assets/images/tweet5.jpg"),
+            buildProfile(
+                context,
+                "assets/images/userImage2.jpg",
+                "Melissa Fumero",
+                "@melissafumero . 10h",
+                ".@CUhlmann would you like a tshirt ?",
+                "assets/images/tweet6.jpg"),
+            buildProfile(
+                context,
+                "assets/images/userImage3.jpg",
+                "Harshita Gupta",
+                "@guptaharshita . Apr 4",
+                "Divorce lawyers be like:",
+                "assets/images/tweet4.jpg")
           ],
         ),
       ),
@@ -191,7 +219,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(width: 150,
+                child: Container(
+                  width: 150,
                   child: Text(
                     tweetCaption,
                     maxLines: 4,
@@ -204,7 +233,54 @@ class _HomeScreenState extends State<HomeScreen> {
                 fit: BoxFit.cover,
                 height: 200,
                 width: MediaQuery.of(context).size.width - 90,
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top:16),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.comment,
+                      color: Colors.grey,size: 18,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40),
+                      child: Text(
+                        "18",
+                        style: TextStyle(color: Colors.grey,fontSize: 14),
+                      ),
+                    ),
+                    Icon(
+                      Icons.sync,
+                      color: Colors.grey,size: 18,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40),
+                      child: Text(
+                        "269",
+                        style: TextStyle(color: Colors.grey,fontSize: 14),
+                      ),
+                    ),
+                    Icon(
+                      Icons.favorite,
+                      color: Colors.grey,size: 18,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 40),
+                      child: Text(
+                        "4k",
+                        style: TextStyle(color: Colors.grey,fontSize: 14),
+                      ),
+
+                    ),
+                    Icon(
+                      Icons.send,
+                      color: Colors.grey,size: 18,
+                    ),
+                  ],
+                ),
+              ),
             ],
           )
         ],
