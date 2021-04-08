@@ -47,8 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: const EdgeInsets.only(left: 8, top: 8),
                     child: CircleAvatar(
                       radius: 26.0,
-                      backgroundImage: NetworkImage(
-                          'https://static.remove.bg/remove-bg-web/71dbdf11b48cb655eefe2f609ad67295258ae141/assets/start-0e837dcc57769db2306d8d659f53555feb500b3c5d456879b9c843d1872e7baa.jpg'),
+                      backgroundImage:
+                          AssetImage("assets/images/mainImage.jpg"),
                     ),
                   ),
                 ),
@@ -134,57 +134,80 @@ class _HomeScreenState extends State<HomeScreen> {
                 thickness: 1,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(
-                    radius: 26.0,
-                    backgroundImage: NetworkImage(
-                        'https://pbs.twimg.com/profile_images/492035582734782464/7SbGRI_t_400x400.jpeg'),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8, top: 8),
-                            child: Text(
-                              "Kerry W. Lothrop",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8, left: 4),
-                            child: Text(
-                              "@kwlothrop . Mar 31",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "The float of shame. #evergiven",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ),
-                      Image.network(
-                        "https://pbs.twimg.com/media/ExqRrbOWEAgQloU?format=png&name=small",
-                        fit: BoxFit.cover,
-                        height: 200,width: MediaQuery.of(context).size.width-90,
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
+            buildProfile(
+                context,
+                "assets/images/userImage1.jpg",
+                "Kerry W. Lothrop",
+                "@kwlothrop . Mar 31",
+                "The float of shame. #evergiven",
+                "assets/images/tweet1.jpg"), //2nd thing
+            buildProfile(
+                context,
+                "assets/images/userImage2.jpg",
+                "Melissa Fumero",
+                "@melissafumero . 10h",
+                "Ba ba ba back in the Nine Nine!!! Yesterday, I was so excited to be back at work I forgot to take a pic to commemorate the occasion, so here’s a day 2 pic! #Brooklyn99 #Season8",
+                "assets/images/tweet2.jpg"),
           ],
         ),
+      ),
+    );
+  }
+
+  Padding buildProfile(BuildContext context, userImage, userName, tweetDate,
+      tweetCaption, tweetImage) {
+    //1st thing
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CircleAvatar(
+            radius: 26.0,
+            backgroundImage: AssetImage(
+                userImage), // phir yaha jo build profile 1 mein naam diye hai wo pass kro..3rd step
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8, top: 8),
+                    child: Text(
+                      userName,
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, left: 4),
+                    child: Text(
+                      tweetDate,
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(width: 150,
+                  child: Text(
+                    tweetCaption,
+                    maxLines: 4,
+                    style: TextStyle(fontSize: 15),
+                  ),
+                ),
+              ),
+              Image.asset(
+                tweetImage,
+                fit: BoxFit.cover,
+                height: 200,
+                width: MediaQuery.of(context).size.width - 90,
+              )
+            ],
+          )
+        ],
       ),
     );
   }
