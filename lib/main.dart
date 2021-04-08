@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tweet_dock/screens/bottom_Bar.dart';
 import 'package:tweet_dock/screens/home_screen.dart';
 import 'package:tweet_dock/screens/landing_screen.dart';
 import 'package:google_fonts/google_fonts.dart';

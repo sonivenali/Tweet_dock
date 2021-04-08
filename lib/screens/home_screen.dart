@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'bottom_Bar.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -9,6 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomBar(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
@@ -175,12 +178,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 "Harshita Gupta",
                 "@guptaharshita . Apr 4",
                 "Divorce lawyers be like:",
-                "assets/images/tweet4.jpg")
+                "assets/images/tweet4.jpg"),
           ],
         ),
       ),
     );
-  }
+}
 
   Padding buildProfile(BuildContext context, userImage, userName, tweetDate,
       tweetCaption, tweetImage) {
@@ -235,48 +238,51 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: MediaQuery.of(context).size.width - 90,
               ),
               Padding(
-                padding: const EdgeInsets.only(top:16),
+                padding: const EdgeInsets.only(top: 16),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
                       Icons.comment,
-                      color: Colors.grey,size: 18,
+                      color: Colors.grey,
+                      size: 18,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 40),
                       child: Text(
                         "18",
-                        style: TextStyle(color: Colors.grey,fontSize: 14),
+                        style: TextStyle(color: Colors.grey, fontSize: 14),
                       ),
                     ),
                     Icon(
                       Icons.sync,
-                      color: Colors.grey,size: 18,
+                      color: Colors.grey,
+                      size: 18,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 40),
                       child: Text(
                         "269",
-                        style: TextStyle(color: Colors.grey,fontSize: 14),
+                        style: TextStyle(color: Colors.grey, fontSize: 14),
                       ),
                     ),
                     Icon(
                       Icons.favorite,
-                      color: Colors.grey,size: 18,
+                      color: Colors.grey,
+                      size: 18,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 40),
                       child: Text(
                         "4k",
-                        style: TextStyle(color: Colors.grey,fontSize: 14),
+                        style: TextStyle(color: Colors.grey, fontSize: 14),
                       ),
-
                     ),
                     Icon(
                       Icons.send,
-                      color: Colors.grey,size: 18,
+                      color: Colors.grey,
+                      size: 18,
                     ),
                   ],
                 ),
