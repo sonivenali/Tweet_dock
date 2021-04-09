@@ -183,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-}
+  }
 
   Padding buildProfile(BuildContext context, userImage, userName, tweetDate,
       tweetCaption, tweetImage) {

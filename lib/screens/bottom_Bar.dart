@@ -21,14 +21,14 @@ class _BottomBarState extends State<BottomBar> {
           ),
           BottomNavigationBarItem(
             icon: new Icon(
-              Icons.mail,
+              Icons.search,
               color: Colors.black,
             ),
             title: new Text('Messages'),
           ),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,
+                Icons.notifications,
                 color: Colors.black,
               ),
               title: Text('Profile')),
