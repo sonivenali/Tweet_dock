@@ -34,7 +34,8 @@ class _LandingScreenState extends State<LandingScreen> {
                           borderRadius: new BorderRadius.circular(20)),
                       color: Colors.blue,
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => SignUp()));
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -57,7 +58,8 @@ class _LandingScreenState extends State<LandingScreen> {
                     ),
                     GestureDetector(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => LogIn()));
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => LogIn()));
                         },
                         child: Text("  Log in",
                             style: TextStyle(
@@ -70,5 +72,3 @@ class _LandingScreenState extends State<LandingScreen> {
     );
   }
 }
-
-

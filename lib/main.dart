@@ -6,7 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tweet_dock/screens/logIn_screen.dart';
 import 'package:tweet_dock/screens/signup_screen.dart';
 
-
 void main() {
   runApp(TweetDock());
 }
@@ -17,10 +16,8 @@ class TweetDock extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: GoogleFonts.latoTextTheme(textTheme)
-      ),
-      home: HomeScreen() ,
+      theme: ThemeData(textTheme: GoogleFonts.latoTextTheme(textTheme)),
+      home: HomeScreen(),
     );
   }
 }

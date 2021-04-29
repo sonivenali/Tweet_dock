@@ -24,9 +24,11 @@ class _LogInState extends State<LogIn> {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(right: 8),
-              child: GestureDetector(onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
-              },
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => SignUp()));
+                },
                 child: Text(
                   "Sign Up",
                   style: TextStyle(
@@ -113,7 +115,8 @@ class _LogInState extends State<LogIn> {
                       color: Colors.blue,
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomeScreen()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                         }
                       },
                       child: Text("Log in",

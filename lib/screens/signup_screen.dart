@@ -15,7 +15,8 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.white,
+    return Scaffold(
+      backgroundColor: Colors.white,
       key: _scaffoldKey,
       body: Padding(
         padding: const EdgeInsets.only(top: 80, right: 20, left: 30),
@@ -45,8 +46,9 @@ class _SignUpState extends State<SignUp> {
                           }
                           return null;
                         },
-                        decoration:
-                        InputDecoration(hintText: "Name",),
+                        decoration: InputDecoration(
+                          hintText: "Name",
+                        ),
                       ),
                     ),
                   ),
@@ -65,8 +67,7 @@ class _SignUpState extends State<SignUp> {
                             return null;
                           }
                         },
-                        decoration: InputDecoration(
-                            hintText: "Email address"),
+                        decoration: InputDecoration(hintText: "Email address"),
                       ),
                     ),
                   ),
@@ -75,7 +76,7 @@ class _SignUpState extends State<SignUp> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: TextFormField(
-                       controller: dobController,
+                        controller: dobController,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter some text';
@@ -92,13 +93,13 @@ class _SignUpState extends State<SignUp> {
                   right: 1,
                   bottom: 20,
                   child: FlatButton(
-                      minWidth: 60,height: 35,
+                      minWidth: 60,
+                      height: 35,
                       shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(20)),
                       color: Colors.blue,
                       onPressed: () {
-                        if(_formKey.currentState.validate()){
-                        }
+                        if (_formKey.currentState.validate()) {}
                       },
                       child: Text("Next",
                           style: TextStyle(
